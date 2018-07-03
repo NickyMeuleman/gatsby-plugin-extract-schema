@@ -1,0 +1,20 @@
+const fs = require("fs");
+const path = require("path");
+const { introspectionQuery, graphql: graphqlTool } = require("gatsby/graphql");
+
+const snapshotLocation = path.resolve(process.cwd(), "schema.json");
+
+exports.onPostBootstrap = ({ store }) =>
+  new Promise((resolve, reject) => {
+    const { schema } = store.getState();
+    graphqlTool(schema, introspectionQuery)
+      .then(res => fs.writeFileSync(snapshotLocation, JSON.stringify(res.data)))
+      .then(() => {
+        console.log("Wrote schema");
+        resolve();
+      })
+      .catch(e => {
+        console.log("Failed to write schema: ", e);
+        reject();
+      });
+  });

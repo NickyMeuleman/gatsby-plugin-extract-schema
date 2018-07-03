@@ -1,0 +1,29 @@
+{
+  "name": "gatsby-plugin-lint-queries",
+  "version": "0.0.1",
+  "description": "lint graphql queries in gatsby",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NickyMeuleman/gatsby-plugin-lint-queries.git"
+  },
+  "keywords": [
+    "lint",
+    "eslint",
+    "graphql",
+    "gatsby",
+    "query"
+  ],
+  "author": "Nicky Meuleman",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/NickyMeuleman/gatsby-plugin-lint-queries/issues"
+  },
+  "homepage": "https://github.com/NickyMeuleman/gatsby-plugin-lint-queries#readme",
+  "peerDependencies": {
+    "gatsby": ">2.0.0-beta",
+    "babel-eslint": ">8.0.0",
+    "eslint": ">4.0.0",
+    "eslint-plugin-graphql": ">2.0.0"
+  }
+}
