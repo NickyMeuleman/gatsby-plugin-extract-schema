@@ -1,13 +1,13 @@
 const fs = require("fs");
 const path = require("path");
-const { introspectionQuery, graphql: graphqlTool } = require("gatsby/graphql");
+const { introspectionQuery, graphql } = require("gatsby/graphql");
 
 const snapshotLocation = path.resolve(process.cwd(), "schema.json");
 
 exports.onPostBootstrap = ({ store }) =>
   new Promise((resolve, reject) => {
     const { schema } = store.getState();
-    graphqlTool(schema, introspectionQuery)
+    graphql(schema, introspectionQuery)
       .then(res => fs.writeFileSync(snapshotLocation, JSON.stringify(res.data)))
       .then(() => {
         console.log("Wrote schema");

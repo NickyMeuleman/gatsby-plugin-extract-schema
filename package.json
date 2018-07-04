@@ -8,10 +8,11 @@
     "url": "git+https://github.com/NickyMeuleman/gatsby-plugin-lint-queries.git"
   },
   "keywords": [
+    "gatsby",
+    "gatsby-plugin",
     "lint",
     "eslint",
     "graphql",
-    "gatsby",
     "query"
   ],
   "author": "Nicky Meuleman",

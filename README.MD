@@ -1,10 +1,11 @@
 # gatsby-plugin-lint-queries
 
-A [Gatsby](https://github.com/gatsbyjs/gatsby) plugin that warns you about potential errors in your `graphql` queries.
+A [Gatsby](https://github.com/gatsbyjs/gatsby) plugin that lets you check your `graphql` queries against the schema `gatsby` generated.
 
 ## Install
 
-`npm install --save gatsby-plugin-lint-queries eslint babel-eslint eslint-plugin-graphql`
+`npm install --save gatsby-plugin-lint-queries`
+`npm install --save-dev eslint babel-eslint eslint-plugin-graphql`
 
 ## How to use
 
@@ -12,11 +13,7 @@ A [Gatsby](https://github.com/gatsbyjs/gatsby) plugin that warns you about poten
 
 ```javascript
 module.exports = {
-  plugins: [
-    {
-      resolve: `gatsby-plugin-lint-queries`
-    }
-  ]
+  plugins: [`gatsby-plugin-lint-queries`]
 };
 ```
 
