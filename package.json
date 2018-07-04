@@ -1,6 +1,6 @@
 {
   "name": "gatsby-plugin-lint-queries",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "lint graphql queries in gatsby",
   "main": "index.js",
   "repository": {
