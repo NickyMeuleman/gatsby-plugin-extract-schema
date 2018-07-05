@@ -1,12 +1,15 @@
-Used to be called `gatsby-plugin-lint-queries`, now called `gatsby-plugin-extract-schema`
+# gatsby-plugin-extract-schema
 
-# gatsby-plugin-lint-queries
+A [Gatsby](https://github.com/gatsbyjs/gatsby) plugin that extracts your graphql schema to a `.json` file.
 
-A [Gatsby](https://github.com/gatsbyjs/gatsby) plugin that lets you check your `graphql` queries against the schema `gatsby` generated.
+You can use this file to check your queries against your schema, by using [eslint-plugin-graphql](https://github.com/apollographql/eslint-plugin-graphql).
 
 ## Install
 
-`npm install --save gatsby-plugin-lint-queries`
+Extract schema:
+`npm install --save gatsby-plugin-extract-schema`
+
+Use extracted schema:
 `npm install --save-dev eslint babel-eslint eslint-plugin-graphql`
 
 ## How to use
@@ -15,9 +18,11 @@ A [Gatsby](https://github.com/gatsbyjs/gatsby) plugin that lets you check your `
 
 ```javascript
 module.exports = {
-  plugins: [`gatsby-plugin-lint-queries`]
+  plugins: ["gatsby-plugin-extract-schema"]
 };
 ```
+
+## Check queries against schema
 
 ### Add `.eslintrc.js` to the project root
 
