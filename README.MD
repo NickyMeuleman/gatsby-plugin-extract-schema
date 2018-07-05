@@ -1,3 +1,5 @@
+Used to be called `gatsby-plugin-lint-queries`, now called `gatsby-plugin-extract-schema`
+
 # gatsby-plugin-lint-queries
 
 A [Gatsby](https://github.com/gatsbyjs/gatsby) plugin that lets you check your `graphql` queries against the schema `gatsby` generated.
