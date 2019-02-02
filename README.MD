@@ -22,6 +22,18 @@ module.exports = {
 };
 ```
 
+or
+
+```javascript
+{
+  resolve: "gatsby-plugin-extract-schema",
+    options: {
+      dest: `${__dirname}/path/to/schema.json`,
+    },
+  },
+}
+```
+
 ## Check queries against schema
 
 ### Add `.eslintrc.js` to the project root
