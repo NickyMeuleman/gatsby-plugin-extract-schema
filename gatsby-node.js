@@ -2,7 +2,7 @@ const write = require("write");
 const path = require("path");
 const { introspectionQuery, graphql } = require("gatsby/graphql");
 
-const snapshotLocation = path.resolve(process.cwd(), "schema.json");
+const defaultLocation = path.resolve(process.cwd(), "schema.json");
 
 exports.onPostBootstrap = ({ store }, options) => {
   const dest = options.dest || snapshotLocation;
