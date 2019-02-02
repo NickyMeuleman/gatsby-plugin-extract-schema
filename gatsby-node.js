@@ -5,7 +5,7 @@ const { introspectionQuery, graphql } = require("gatsby/graphql");
 const defaultLocation = path.resolve(process.cwd(), "schema.json");
 
 exports.onPostBootstrap = ({ store }, options) => {
-  const dest = options.dest || snapshotLocation;
+  const dest = options.dest || defaultLocation;
   new Promise((resolve, reject) => {
     const { schema } = store.getState();
     graphql(schema, introspectionQuery)
