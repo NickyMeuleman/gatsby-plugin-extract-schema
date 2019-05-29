@@ -29,10 +29,15 @@ or
   resolve: "gatsby-plugin-extract-schema",
     options: {
       dest: `${__dirname}/path/to/schema.json`,
+      // Output schema into {"data": {"__schema": ...}}
+      // instead of {"__schema": ...}.
+      nested: true,
     },
   },
 }
 ```
+
+Note: If the generated schema is not working for you, try enabling the "nested" option like in the example above.
 
 ## Check queries against schema
 
