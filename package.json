@@ -24,8 +24,7 @@
   "peerDependencies": {
     "gatsby": "^2.0.0 || ^3.0.0"
   },
-  "devDependencies": {},
   "dependencies": {
-    "write": "^1.0.3"
+    "write": "^2.0.0"
   }
 }
