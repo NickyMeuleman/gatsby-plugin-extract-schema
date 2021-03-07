@@ -1,7 +1,7 @@
 {
   "name": "gatsby-plugin-extract-schema",
-  "version": "0.0.4",
-  "description": "Extract Gatsby's generated graphql schema to a JSON file",
+  "version": "0.1.0",
+  "description": "Extract Gatsby's generated graphql schema to a file",
   "main": "index.js",
   "repository": {
     "type": "git",
@@ -22,13 +22,9 @@
   },
   "homepage": "https://github.com/NickyMeuleman/gatsby-plugin-extract-schema#readme",
   "peerDependencies": {
-    "gatsby": ">2.0.0-beta",
-    "babel-eslint": ">8.0.0",
-    "eslint": ">4.0.0",
-    "eslint-plugin-graphql": ">2.0.0"
+    "gatsby": "^2.0.0 || ^3.0.0"
   },
-  "devDependencies": {},
   "dependencies": {
-    "write": "^1.0.3"
+    "write": "^2.0.0"
   }
 }
