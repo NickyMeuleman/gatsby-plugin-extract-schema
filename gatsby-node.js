@@ -1,22 +1,30 @@
 const write = require("write");
 const path = require("path");
-const { introspectionQuery, graphql } = require("gatsby/graphql");
+const { printSchema } = require("gatsby/graphql");
 
-const defaultLocation = path.resolve(process.cwd(), "schema.json");
+exports.onPostBootstrap = async ({ store }, options) => {
+  try {
+    const defaultLocation = path.resolve(process.cwd(), "schema.graphql");
+    const defaultGetSchema = async (obj) =>
+      printSchema(obj, { commentDescriptions: true });
+    const defaultWriteSchema = async (location, schema) =>
+      write(location, schema);
 
-exports.onPostBootstrap = ({ store }, options) => {
-  const dest = options.dest || defaultLocation;
-  new Promise((resolve, reject) => {
-    const { schema } = store.getState();
-    graphql(schema, introspectionQuery)
-      .then(res => write.sync(dest, JSON.stringify(res.data)))
-      .then(() => {
-        console.log("[gatsby-plugin-extract-schema] Wrote schema");
-        resolve();
-      })
-      .catch(e => {
-        console.error("[gatsby-plugin-extract-schema] Failed to write schema: ", e);
-        reject();
-      });
-  });
-}
+    const location = options.dest ?? defaultLocation;
+    const { schema: internalSchemaObj } = store.getState();
+    let schema =
+      (await options.getSchema?.(internalSchemaObj)) ??
+      (await defaultGetSchema(internalSchemaObj));
+    schema = (await options.adjustSchema?.(schema)) ?? schema;
+
+    (await options?.writeSchema?.(location, schema)) ??
+      (await defaultWriteSchema(location, schema));
+
+    console.log("[gatsby-plugin-extract-schema] Wrote schema");
+  } catch (error) {
+    console.error(
+      "[gatsby-plugin-extract-schema] Failed to write schema: ",
+      error
+    );
+  }
+};
