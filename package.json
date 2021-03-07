@@ -22,10 +22,7 @@
   },
   "homepage": "https://github.com/NickyMeuleman/gatsby-plugin-extract-schema#readme",
   "peerDependencies": {
-    "babel-eslint": ">8.0.0",
-    "eslint": ">4.0.0",
-    "eslint-plugin-graphql": ">2.0.0",
-    "gatsby": ">2.0.0-beta"
+    "gatsby": "^2.0.0 || ^3.0.0"
   },
   "devDependencies": {},
   "dependencies": {
