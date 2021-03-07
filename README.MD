@@ -44,6 +44,7 @@ They are all asynchronous functions, if you define them, mark the function as `a
 
 ###### Return value
 - a Promise
+
 The Promise should resolve to a string that is later written to a file.
 
 ##### adjustSchema
@@ -53,6 +54,7 @@ The Promise should resolve to a string that is later written to a file.
 
 ###### Return value
 - a Promise
+
 The Promise should resolve to a string that is later written to a file.
 
 ##### writeSchema
@@ -63,6 +65,7 @@ The Promise should resolve to a string that is later written to a file.
 
 ###### Return value
 - a Promise
+
 The Promise should resolve when the schema-string is written to a file.
 
 ### Example usage
@@ -122,6 +125,7 @@ prepare by installing prerequisite packages
 ### Configuration in `.eslintrc.js`
 
 - If the schema you wrote was a `.graphql` file, use the `schemaString` option that `eslint-plugin-graphql` provides.
+
 The file has to be read to a string first.
 The code snipped below uses `fs.readFileSync` to do that.
 
