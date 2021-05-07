@@ -10,15 +10,14 @@ exports.onPostBootstrap = async ({ store }, options) => {
     const defaultWriteSchema = async (location, schema) =>
       write(location, schema);
 
-    const location = options.dest ?? defaultLocation;
+    const location = options.dest || defaultLocation;
     const { schema: internalSchemaObj } = store.getState();
-    let schema =
-      (await options.getSchema?.(internalSchemaObj)) ??
-      (await defaultGetSchema(internalSchemaObj));
-    schema = (await options.adjustSchema?.(schema)) ?? schema;
+    const getSchema = options.getSchema || defaultGetSchema
+    let schema = (await getSchema(internalSchemaObj));
+    schema = options.adjustSchema ? await options.adjustSchema(schema) : schema;
 
-    (await options?.writeSchema?.(location, schema)) ??
-      (await defaultWriteSchema(location, schema));
+    const writeSchema = options && options.writeSchema || defaultWriteSchema;
+    await writeSchema(location, schema);
 
     console.log("[gatsby-plugin-extract-schema] Wrote schema");
   } catch (error) {
