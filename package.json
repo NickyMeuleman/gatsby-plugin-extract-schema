@@ -1,6 +1,6 @@
 {
   "name": "gatsby-plugin-extract-schema",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "Extract Gatsby's generated graphql schema to a file",
   "main": "index.js",
   "repository": {
