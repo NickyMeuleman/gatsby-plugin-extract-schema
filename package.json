@@ -22,7 +22,7 @@
   },
   "homepage": "https://github.com/NickyMeuleman/gatsby-plugin-extract-schema#readme",
   "peerDependencies": {
-    "gatsby": "^2.0.0 || ^3.0.0 || ^4.0.0"
+    "gatsby": "^2.0.0 || ^3.0.0 || ^4.0.0 || ^5.0.0"
   },
   "dependencies": {
     "write": "^2.0.0"
